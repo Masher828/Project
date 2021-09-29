@@ -5,15 +5,7 @@ const { join } = require("path");
  * The schema for graph ql nodes
  * */
 
-  const compile = () => {
-    readFileSync(join(__dirname, "schema.graphql")).toString();
-    return buildSchema(this.types);
-  }
- 
-  const schema = () => {
-    if (!GraphSchema._compiledSchema)
-      GraphSchema._compiledSchema = new GraphSchema().compile();
-    return GraphSchema._compiledSchema;
-  }
-
-  module.exports = schema;
+const compile = () => {
+    return buildSchema(readFileSync(join(__dirname, "schema.graphql")).toString());
+}
+module.exports = compile;

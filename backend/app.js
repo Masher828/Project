@@ -6,10 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
- 
+const GraphQLController = require("./graph/GraphQlController");
 var app = express();
 const mongoose = require("mongoose");
-const GraphQLController = require("./graph/GraphQlController");
 const router = express.Router();
 /* GET users listing. */
 mongoose.connect('mongodb://localhost:27017/Testing',
