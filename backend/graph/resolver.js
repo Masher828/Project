@@ -1,33 +1,23 @@
-    // const clients = require('./index')
-    const crypto = require("crypto");
-    const resolvers = {
+    // const clients = require('./index') 
+    const User = require('../mongo/user')
+     const crypto = require("crypto");
+    const ResolverRoot = {
         Query: {
-            author: (_, { id }) => {
-                console.log(id)
-                return User.findOne({ _id: id })
+            getUser: ({id}) => {
+                console.log(id,"ji")
+                // return User.findOne({ _id: id })
+                return "Helo"
 
             },
-            // sendMessage: (_, { data, metadata }) => {
-            //     console.log(data, metadata)
-
-            //     // clients.client.get('12345678').send("New Message By Manish")
-            //     return true
-            // }
         },
         Mutation: {
-            // addUser: (_, { input }) => {
-            //     input["_id"] = crypto.randomBytes(16).toString("hex");
-            //     const user = new User(input)
-            //     user.save();
-            //     console.log(user)
-            //     return user._id
-            // },
-            // sendMessage: (_, { input }) => {
-            //     input["_id"] = crypto.randomBytes(16).toString("hex");
-            //     const message = new Message(input)
-            //     message.save();
-            //     return message._id
-            // }
+            addUser: (_, { input }) => {
+                input["_id"] = crypto.randomBytes(16).toString("hex");
+                const user = new User(input)
+                user.save();
+                console.log(user)
+                return user._id
+            },
         }
     }
-    module.exports = resolvers;
+    module.exports = ResolverRoot;

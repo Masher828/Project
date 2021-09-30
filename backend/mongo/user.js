@@ -10,21 +10,14 @@ const UserSchema = new mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         required : true
     },
-    firstName: {
+    name: {
       type: String,
       required: true,
       },
-    lastName:{
-      type: String,
-      required: true,
-      },
-    gender: {
-      type: String,
-      enum : ["MALE", "FEMALE", "OTHER"]
-      },
-    contacts : {
-        type : [ContactSchema]
-    }
+      message:{
+        type:String,
+        required:true
+      }
   });
 
   
