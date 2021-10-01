@@ -1,7 +1,5 @@
 type Query{
-
     getUser(id:String): String
-    
 }
 
 type user{
@@ -11,7 +9,6 @@ type user{
 }
 
 input userInput{
-    id:String,
     name:String,
     message:String
 }

@@ -1,13 +1,11 @@
     // const clients = require('./index') 
     const User = require('../mongo/user')
-     const crypto = require("crypto");
+    const crypto = require("crypto");
     const ResolverRoot = {
         Query: {
-            getUser: ({id}) => {
-                console.log(id,"ji")
-                // return User.findOne({ _id: id })
+            getUser: async(_, { id }) => {
+                console.log(id, "ji")
                 return "Helo"
-
             },
         },
         Mutation: {
@@ -20,4 +18,4 @@
             },
         }
     }
-    module.exports = ResolverRoot;
+    exports = module.exports = ResolverRoot;

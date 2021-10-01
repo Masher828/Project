@@ -8,10 +8,14 @@ const GraphSchema = require("../graph/GraphSchema");
  * To handle graphQL routes
  * */
 
+const { makeExecutableSchema } = require('graphql-tools');
+const schema = makeExecutableSchema({
+    typeDefs: GraphSchema(),
+    resolvers: ResolverRoot,
+});
 const graphAPI = (req, res) => {
     graphqlHTTP.graphqlHTTP({
-        schema: GraphSchema(),
-        rootValue: ResolverRoot,
+        schema: schema,
         graphiql: process.env.BUILD !== "production",
         customFormatErrorFn: err => {
             let [code, message] = err.message.split("$;$");
