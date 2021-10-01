@@ -9,10 +9,6 @@ const MessageSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    timestamps : {
-        type : String,
-        required : true
-    },
     from : {
         type : mongoose.Schema.Types.ObjectId
     },

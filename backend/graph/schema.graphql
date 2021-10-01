@@ -1,21 +1,25 @@
 type Query{
-    getUser(id:String): String
+    getUser(id:ID): User
 }
 
-type user{
-    id:String,
-    name:String,
-    message:String
+type User{
+    _id: ID
+    name:String
 }
 
 input userInput{
-    name:String,
-    message:String
+    name:String
+}
+
+input messageInput{
+    body : String,
+    from : ID,
+    to : ID
 }
 
 type Mutation{
 
-
-    addUser(input:userInput): String
+    addUser(input:userInput): ID
+    sendMessage(input:messageInput): String
 
 }
