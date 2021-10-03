@@ -1,9 +1,8 @@
-import './App.css';
+import "./App.css";
+import Main from "./chat_main/Main";
 
 function App() {
-  return (
-    <h1>Hello</h1>
-  );
+  return <Main />;
 }
 
 export default App;
