@@ -1,9 +1,12 @@
 import React from "react";
+import ConversationScreenActon from "./ConversationScreenActon";
+import ConversationScreenHeader from "./ConversationScreenHeader";
 
 const ConversationScreen = () => {
   return (
     <>
-      <div className="drop-shadow-2xl w-12/12  h-16 mt-2 ml-2 mr-2 rounded-lg bg-green-200 "></div>
+      <ConversationScreenHeader />
+
       <div className="flex flex-row h-full w-full">
         <div className="flex flex-col h-full w-full p-2">
           <div className="h-full flex flex-col w-full ">
@@ -59,15 +62,7 @@ const ConversationScreen = () => {
               </div>
             </div>
           </div>
-          <div className="h-16 w-full  p-2">
-            <form className="flex w-full">
-              <input
-                type="text"
-                className="w-5/6  h-10 border-gray-300 border-solid border rounded-full p-3  "
-              />
-              <input type="submit" value="Send" className="ml-3 p-2" />
-            </form>
-          </div>
+          <ConversationScreenActon />
         </div>
       </div>
     </>
