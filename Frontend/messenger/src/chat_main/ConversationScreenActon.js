@@ -9,9 +9,8 @@ const ConversationScreenActon = () => {
           <input
             type="text"
             className="w-5/6  h-10 border-gray-300 border-solid border rounded-full p-3  "
-            value="Type here.."
           />
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-3 ml-2 rounded-full">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-3 ml-2 rounded-full">
             <FiSend />
           </button>
         </form>
