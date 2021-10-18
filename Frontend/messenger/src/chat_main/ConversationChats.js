@@ -12,16 +12,17 @@ let user1_lastkey = "";
 
 const ConversationChats = () => {
   const dispatcher = useDispatch();
-  const store = useSelector((store) => store.message);
+  const store = useSelector((store) => store.message.messages);
   const AC = bindActionCreators(ActionCreators, dispatcher);
 
   //console.log(store.messages);
-
-  const Chats = store.messages.map((msg, index) => {
+  // const a = useSelector((state) => state.messages);
+  //console.log(store);
+  const Chats = store.map((msg, index) => {
     let showTime = true;
-    if (msg.index != store.messages.length - 1) {
-      let next_item = store.messages[index + 1];
-      // console.log(next_item["id"]);
+    if (msg.index < store.length) {
+      let next_item = store[index + 1];
+      console.log(next_item["id"]);
 
       // if (next.from == msg.from && next.time == msg.time) {
       // showTime = false;
