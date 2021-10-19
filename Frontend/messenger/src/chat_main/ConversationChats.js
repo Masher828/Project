@@ -20,13 +20,11 @@ const ConversationChats = () => {
   //console.log(store);
   const Chats = store.map((msg, index) => {
     let showTime = true;
-    if (msg.index < store.length) {
-      let next_item = store[index + 1];
-      console.log(next_item["id"]);
-
-      // if (next.from == msg.from && next.time == msg.time) {
-      // showTime = false;
-      //}
+    if (index-1 < store.length-1) {
+      let next_item = store[index];
+      if (next_item.from == msg.from && next_item.time == msg.time) {
+      showTime = false;
+      }
     }
 
     //console.log(next);
